@@ -14,15 +14,15 @@ router.post("/", async (req, res) => {
   }
 });
 
-// router.get("/", async (req, res) => {
-//   try {
-//     const product = await Product.find().lean().exec();
+router.get("/", async (req, res) => {
+  try {
+    const product = await Product.find().lean().exec();
 
-//     return res.status(200).send(product);
-//   } catch (e) {
-//     return res.status(400).json({ message: e.message, status: "Failed" });
-//   }
-// });
+    return res.status(200).send(product);
+  } catch (e) {
+    return res.status(400).json({ message: e.message, status: "Failed" });
+  }
+});
 
 //by ratings
 
