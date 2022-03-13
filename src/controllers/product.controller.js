@@ -24,6 +24,15 @@ router.get("/", async (req, res) => {
   }
 });
 
+router.get("/sort", async (req, res) => {
+  try {
+    const product = await Product.find().sort({ product_name: 1 });
+
+    return res.status(200).send(product);
+  } catch (e) {
+    return res.status(400).json({ message: e.message, status: "Failed" });
+  }
+});
 //by ratings
 
 //by discount
